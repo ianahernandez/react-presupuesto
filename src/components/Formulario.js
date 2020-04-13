@@ -50,11 +50,11 @@ const Formulario = () => {
                     onChange={e => guardarCantidad(parseInt(e.target.value))}
                 />
             </div>
-                <input
-                    type="submit"
-                    className="button-primary u-full-width"
-                    value="Agregar gasto"
-                />
+            <input
+                type="submit"
+                className="button-primary u-full-width"
+                value="Agregar gasto"
+            />
             
         </form>
      );

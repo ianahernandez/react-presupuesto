@@ -1,4 +1,5 @@
 import React, {Fragment, useState} from 'react';
+import PropTypes from 'prop-types';
 import Error from './Error';
 
 const Pregunta = ({guardarPresupuesto, guardarRestante, actualizarPregunta}) => {
@@ -16,7 +17,6 @@ const Pregunta = ({guardarPresupuesto, guardarRestante, actualizarPregunta}) => 
     const agregarPresupuesto = e => {
         e.preventDefault();
         //Validar
-        console.log(cantidad)
         if (cantidad < 1 || isNaN(cantidad)){
             actualizarError(true);
             return;
@@ -50,6 +50,12 @@ const Pregunta = ({guardarPresupuesto, guardarRestante, actualizarPregunta}) => 
             </form>
         </Fragment>
      ); 
+}
+
+Pregunta.propTypes = {
+    guardarPresupuesto: PropTypes.func.isRequired, 
+    guardarRestante: PropTypes.func.isRequired, 
+    actualizarPregunta: PropTypes.func.isRequired
 }
  
 export default Pregunta;

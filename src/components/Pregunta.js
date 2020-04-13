@@ -15,7 +15,11 @@ const Pregunta = () => {
     const agregarPresupuesto = e => {
         e.preventDefault();
         //Validar
-        
+        console.log(cantidad)
+        if (cantidad < 1 || isNaN(cantidad)){
+            actualizarError(true);
+            return;
+        }
 
         //Si se pasa la validacion
     }
@@ -23,7 +27,9 @@ const Pregunta = () => {
     return ( 
         <Fragment>
             <h2>Coloca tu presupuesto</h2>
-            <form>
+            <form
+                onSubmit={agregarPresupuesto}
+            >
                 <input
                     type="number"
                     className="u-full-width"
@@ -34,7 +40,6 @@ const Pregunta = () => {
                     type="submit"
                     className="button-primary u-full-width"
                     value="Definir presupuesto"
-                    onSubmit={agregarPresupuesto}
                 />
             </form>
         </Fragment>
